@@ -1,0 +1,11 @@
+itemGroup.prehistorica.blocks=Project: Prehistorica - Blocks
+itemGroup.prehistorica.items=Project: Prehistorica - Items
+
+# Time Periods
+
+time_period.cretaceous.name=Cretaceous
+time_period.jurassic.name=Jurassic
+time_period.triassic.name=Triassic
+
+# Plants - Cretaceous
+tile.equisetites.name=Equisetites
