@@ -2,6 +2,7 @@ package net.gegy1000.prehistorica.server.api.plant;
 
 import net.gegy1000.prehistorica.server.api.TimePeriod;
 import net.gegy1000.prehistorica.server.api.plant.cretaceous.EquisetitesPlant;
+import net.gegy1000.prehistorica.server.api.plant.cretaceous.OrontiumMackiiPlant;
 import net.gegy1000.prehistorica.server.block.BlockRegistry;
 import net.gegy1000.prehistorica.server.block.plant.PlantBlock;
 import net.minecraft.block.Block;
@@ -20,6 +21,7 @@ public class PlantHandler {
     private static final Map<Plant, Block> BLOCKS = new HashMap<>();
 
     public static final Plant EQUISETITES = new EquisetitesPlant();
+    public static final Plant ORONTIUM_MACKII = new OrontiumMackiiPlant();
 
     public static void register() {
         try {

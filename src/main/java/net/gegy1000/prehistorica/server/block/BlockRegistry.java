@@ -2,6 +2,8 @@ package net.gegy1000.prehistorica.server.block;
 
 import net.gegy1000.prehistorica.ProjectPrehistorica;
 import net.gegy1000.prehistorica.server.api.item.BlockEntity;
+import net.gegy1000.prehistorica.server.api.item.SubtypeBlock;
+import net.gegy1000.prehistorica.server.item.SubtypeBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
@@ -13,6 +15,8 @@ import java.util.List;
 
 public class BlockRegistry {
     public static final List<Block> BLOCKS = new ArrayList<>();
+
+    public static final PrehistoricSand PREHISTORIC_SAND = new PrehistoricSand();
 
     public static void register() {
         try {
@@ -36,11 +40,18 @@ public class BlockRegistry {
         String name = block.getUnlocalizedName().substring("tile.".length());
         ResourceLocation identifier = new ResourceLocation(ProjectPrehistorica.MODID, name);
         GameRegistry.register(block, identifier);
-        GameRegistry.register(new ItemBlock(block), identifier);
+        GameRegistry.register(BlockRegistry.createItemBlock(block), identifier);
         BLOCKS.add(block);
 
         if (block instanceof BlockEntity) {
             GameRegistry.registerTileEntity(((BlockEntity) block).getEntity(), ProjectPrehistorica.MODID + "." + name);
         }
+    }
+
+    private static ItemBlock createItemBlock(Block block) {
+        if (block instanceof SubtypeBlock) {
+            return new SubtypeBlockItem(block, (SubtypeBlock) block);
+        }
+        return new ItemBlock(block);
     }
 }

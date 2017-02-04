@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "period=cretaceous,variant=sand": {
+      "model": "prehistorica:cretaceous_sand"
+    },
+    "period=cretaceous,variant=red_sand": {
+      "model": "prehistorica:cretaceous_red_sand"
+    },
+    "period=jurassic,variant=sand": {
+      "model": "prehistorica:jurassic_sand"
+    },
+    "period=jurassic,variant=red_sand": {
+      "model": "prehistorica:jurassic_red_sand"
+    },
+    "period=triassic,variant=sand": {
+      "model": "prehistorica:triassic_sand"
+    },
+    "period=triassic,variant=red_sand": {
+      "model": "prehistorica:triassic_red_sand"
+    }
+  }
+}

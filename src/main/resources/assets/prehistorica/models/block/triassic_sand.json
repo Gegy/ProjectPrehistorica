@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "prehistorica:blocks/triassic_sand"
+  }
+}

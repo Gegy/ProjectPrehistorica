@@ -19,13 +19,21 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class RenderRegistry {
     public void onPreInit() {
         for (Block block : BlockRegistry.BLOCKS) {
+            String name = block.getUnlocalizedName().substring("tile.".length());
+
             if (block instanceof IgnoreRenderProperty) {
                 IProperty<?>[] ignoredProperties = ((IgnoreRenderProperty) block).getIgnoredProperties();
                 ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(ignoredProperties).build());
             }
 
             if (block instanceof DefaultRenderedItem) {
-                this.registerBlockRenderer(block, ((DefaultRenderedItem) block).getResource(block.getUnlocalizedName().substring("tile.".length())), "inventory");
+                this.registerBlockRenderer(block, ((DefaultRenderedItem) block).getResource(name), "inventory");
+            } else if (block instanceof SubtypeRenderedItem) {
+                SubtypeRenderedItem subtypeItem = (SubtypeRenderedItem) block;
+                int[] subtypes = subtypeItem.getUsedSubtypes();
+                for (int metadata : subtypes) {
+                    this.registerBlockRenderer(block, metadata, subtypeItem.getResource(name, metadata), "inventory");
+                }
             }
         }
 
@@ -37,7 +45,6 @@ public class RenderRegistry {
             } else if (item instanceof SubtypeRenderedItem) {
                 SubtypeRenderedItem subtypeItem = (SubtypeRenderedItem) item;
                 int[] subtypes = subtypeItem.getUsedSubtypes();
-
                 for (int metadata : subtypes) {
                     this.registerItemRenderer(item, metadata, subtypeItem.getResource(name, metadata), "inventory");
                 }

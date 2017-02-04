@@ -9,3 +9,14 @@ time_period.triassic.name=Triassic
 
 # Plants - Cretaceous
 tile.equisetites.name=Equisetites
+tile.orontium_mackii.name=Orontium Mackii
+
+# Blocks - General Scenery
+tile.cretaceous_sand.name=Cretaceous Sand
+tile.cretaceous_red_sand.name=Cretaceous Red Sand
+
+tile.jurassic_sand.name=Jurassic Sand
+tile.jurassic_red_sand.name=Jurassic Red Sand
+
+tile.triassic_sand.name=Triassic Sand
+tile.triassic_red_sand.name=Triassic Red Sand
