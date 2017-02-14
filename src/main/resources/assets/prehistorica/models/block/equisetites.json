@@ -1,6 +1,6 @@
 {
-  "parent": "block/cross",
+  "parent": "prehistorica:block/colored_plant",
   "textures": {
-    "cross": "prehistorica:blocks/plants/equisetites"
+    "base": "prehistorica:blocks/plants/equisetites"
   }
 }

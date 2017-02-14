@@ -1,5 +1,6 @@
 package net.gegy1000.prehistorica.server.block.plant;
 
+import net.gegy1000.prehistorica.server.api.item.ColoredBlock;
 import net.gegy1000.prehistorica.server.api.item.DefaultRenderedItem;
 import net.gegy1000.prehistorica.server.api.plant.PlantSpawner;
 import net.gegy1000.prehistorica.server.tab.TabRegistry;
@@ -9,16 +10,19 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
-public class PlantBlock<T extends PlantBlock> extends BlockBush implements DefaultRenderedItem {
+public class PlantBlock<T extends PlantBlock> extends BlockBush implements DefaultRenderedItem, ColoredBlock {
     public static final AxisAlignedBB FLOWER = new AxisAlignedBB(0.3, 0.0, 0.3, 0.7, 0.6, 0.7);
     public static final AxisAlignedBB BUSH = new AxisAlignedBB(0.1, 0.0, 0.1, 0.9, 0.8, 0.9);
     public static final AxisAlignedBB DOUBLE = new AxisAlignedBB(0.1, 0.0, 0.1, 0.9, 1.0, 0.9);
@@ -166,5 +170,18 @@ public class PlantBlock<T extends PlantBlock> extends BlockBush implements Defau
 
     public PlantSpawner getSpawner() {
         return this.spawner;
+    }
+
+    @Override
+    public int getColor(ItemStack stack, int tintIndex) {
+        return tintIndex == 0 ? ColorizerGrass.getGrassColor(1.0, 1.0) : 0xFFFFFF;
+    }
+
+    @Override
+    public int getColor(IBlockState state, IBlockAccess world, BlockPos pos, int tintIndex) {
+        if (tintIndex == 0) {
+            return BiomeColorHelper.getGrassColorAtPos(world, pos);
+        }
+        return 0xFFFFFF;
     }
 }

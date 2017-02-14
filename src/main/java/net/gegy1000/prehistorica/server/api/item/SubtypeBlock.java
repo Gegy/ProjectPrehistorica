@@ -1,8 +1,7 @@
 package net.gegy1000.prehistorica.server.api.item;
 
-import net.gegy1000.prehistorica.server.api.TimePeriod;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSand;
 import net.minecraft.block.state.IBlockState;
 
 public interface SubtypeBlock extends SubtypeRenderedItem {
@@ -11,9 +10,10 @@ public interface SubtypeBlock extends SubtypeRenderedItem {
     @Override
     default int[] getUsedSubtypes() {
         Block block = (Block) this;
-        int[] subtypes = new int[BlockSand.EnumType.values().length * TimePeriod.values().length];
+        ImmutableList<IBlockState> states = block.getBlockState().getValidStates();
+        int[] subtypes = new int[states.size()];
         int index = 0;
-        for (IBlockState state : block.getBlockState().getValidStates()) {
+        for (IBlockState state : states) {
             subtypes[index++] = block.damageDropped(state);
         }
         return subtypes;

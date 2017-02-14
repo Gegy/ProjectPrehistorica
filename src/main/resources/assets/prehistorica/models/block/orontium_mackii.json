@@ -1,6 +1,7 @@
 {
-  "parent": "block/cross",
+  "parent": "prehistorica:block/multilayer_plant",
   "textures": {
-    "cross": "prehistorica:blocks/plants/orontium_mackii"
+    "base": "prehistorica:blocks/plants/orontium_mackii",
+    "overlay": "prehistorica:blocks/plants/orontium_mackii_flower"
   }
 }

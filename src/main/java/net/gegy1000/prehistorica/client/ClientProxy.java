@@ -16,6 +16,8 @@ public class ClientProxy extends ServerProxy {
     @Override
     public void onInit() {
         super.onInit();
+
+        RENDER_REGISTRY.onInit();
     }
 
     @Override
