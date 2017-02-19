@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "prehistorica:tempskya_top"
+    },
+    "half=lower": {
+      "model": "prehistorica:tempskya_bottom"
+    }
+  }
+}

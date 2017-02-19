@@ -13,7 +13,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.ColorizerGrass;
+import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeColorHelper;
@@ -174,13 +174,13 @@ public class PlantBlock<T extends PlantBlock> extends BlockBush implements Defau
 
     @Override
     public int getColor(ItemStack stack, int tintIndex) {
-        return tintIndex == 0 ? ColorizerGrass.getGrassColor(1.0, 1.0) : 0xFFFFFF;
+        return tintIndex == 0 ? ColorizerFoliage.getFoliageColor(1.0, 1.0) : 0xFFFFFF;
     }
 
     @Override
     public int getColor(IBlockState state, IBlockAccess world, BlockPos pos, int tintIndex) {
         if (tintIndex == 0) {
-            return BiomeColorHelper.getGrassColorAtPos(world, pos);
+            return BiomeColorHelper.getFoliageColorAtPos(world, pos);
         }
         return 0xFFFFFF;
     }

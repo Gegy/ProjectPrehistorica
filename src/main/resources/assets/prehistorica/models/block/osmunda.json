@@ -1,0 +1,6 @@
+{
+  "parent": "prehistorica:block/colored_plant",
+  "textures": {
+    "base": "prehistorica:blocks/plants/osmunda"
+  }
+}

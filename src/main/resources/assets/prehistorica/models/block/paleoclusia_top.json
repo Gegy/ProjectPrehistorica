@@ -1,0 +1,7 @@
+{
+  "parent": "prehistorica:block/multilayer_plant",
+  "textures": {
+    "base": "prehistorica:blocks/plants/paleoclusia_top",
+    "overlay": "prehistorica:blocks/plants/paleoclusia_color_top"
+  }
+}

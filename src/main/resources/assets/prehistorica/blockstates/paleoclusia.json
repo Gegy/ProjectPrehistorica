@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "prehistorica:paleoclusia_top"
+    },
+    "half=lower": {
+      "model": "prehistorica:paleoclusia_bottom"
+    }
+  }
+}

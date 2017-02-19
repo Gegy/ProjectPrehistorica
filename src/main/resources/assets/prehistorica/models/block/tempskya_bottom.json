@@ -1,0 +1,7 @@
+{
+  "parent": "prehistorica:block/multilayer_plant",
+  "textures": {
+    "base": "prehistorica:blocks/plants/tempskya_bottom",
+    "overlay": "prehistorica:blocks/plants/tempskya_color_bottom"
+  }
+}
