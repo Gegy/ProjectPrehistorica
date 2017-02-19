@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 @Mod(modid = ProjectPrehistorica.MODID, name = ProjectPrehistorica.NAME, version = ProjectPrehistorica.VERSION, dependencies = "required-after:llibrary@[" + ProjectPrehistorica.LLIBRARY_VERSION + ",)")
 public class ProjectPrehistorica {
@@ -30,5 +31,10 @@ public class ProjectPrehistorica {
     @Mod.EventHandler
     public void onPostInit(FMLPostInitializationEvent event) {
         ProjectPrehistorica.proxy.onPostInit();
+    }
+
+    @Mod.EventHandler
+    public void onServerStarting(FMLServerStartingEvent event) {
+        ProjectPrehistorica.proxy.onServerStarting(event);
     }
 }
