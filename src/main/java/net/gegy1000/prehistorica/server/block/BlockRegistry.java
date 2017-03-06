@@ -16,7 +16,9 @@ import java.util.List;
 public class BlockRegistry {
     public static final List<Block> BLOCKS = new ArrayList<>();
 
-    public static final PrehistoricSand PREHISTORIC_SAND = new PrehistoricSand();
+    public static final PrehistoricGrassBlock PREHISTORIC_GRASS = new PrehistoricGrassBlock();
+    public static final PrehistoricSoilBlock PREHISTORIC_SOIL = new PrehistoricSoilBlock();
+    public static final PrehistoricSandBlock PREHISTORIC_SAND = new PrehistoricSandBlock();
 
     public static void register() {
         try {

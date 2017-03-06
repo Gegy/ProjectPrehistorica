@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "period=cretaceous": {
+      "model": "prehistorica:cretaceous_soil"
+    },
+    "period=jurassic": {
+      "model": "prehistorica:jurassic_soil"
+    },
+    "period=triassic": {
+      "model": "prehistorica:triassic_soil"
+    }
+  }
+}

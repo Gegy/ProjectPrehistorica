@@ -1,6 +1,8 @@
 package net.gegy1000.prehistorica.server.world.provider;
 
+import net.gegy1000.prehistorica.server.api.TimePeriod;
 import net.gegy1000.prehistorica.server.util.PrehistoricaUtils;
+import net.gegy1000.prehistorica.server.world.biome.generator.PrehistoricaBiomeProvider;
 import net.gegy1000.prehistorica.server.world.dimension.DimensionRegistry;
 import net.gegy1000.prehistorica.server.world.generator.CretaceousChunkGenerator;
 import net.minecraft.entity.Entity;
@@ -18,7 +20,7 @@ public class CretaceousWorldProvider extends WorldProvider {
 
     @Override
     public void createBiomeProvider() {
-        this.biomeProvider = this.world.getWorldType().getBiomeProvider(this.world);
+        this.biomeProvider = new PrehistoricaBiomeProvider(TimePeriod.CRETACEOUS, this.world.getSeed());
     }
 
     @Override
@@ -34,7 +36,7 @@ public class CretaceousWorldProvider extends WorldProvider {
     @Override
     public Vec3d getSkyColor(Entity cameraEntity, float partialTicks) {
         float angle = this.calculateCelestialAngle(cameraEntity.world.getWorldTime(), partialTicks);
-        float brightness = MathHelper.cos(angle * ((float)Math.PI * 2F)) * 2.0F + 0.5F;
+        float brightness = MathHelper.cos(angle * ((float) Math.PI * 2F)) * 2.0F + 0.5F;
         brightness = MathHelper.clamp(brightness, 0.0F, 1.0F);
         Vec3d base = super.getSkyColor(cameraEntity, partialTicks);
         return PrehistoricaUtils.blendColor(base, new Vec3d(0.1, 0.4, 0.2), brightness * 0.5F);

@@ -8,6 +8,7 @@ time_period.jurassic.name=Jurassic
 time_period.triassic.name=Triassic
 
 # Plants - Cretaceous
+
 tile.equisetites.name=Equisetites
 tile.orontium_mackii.name=Orontium Mackii
 tile.osmunda.name=Osmunda
@@ -16,6 +17,7 @@ tile.tree_fern.name=Tree Fern
 tile.paleoclusia.name=Paleoclusia
 
 # Blocks - General Scenery
+
 tile.cretaceous_sand.name=Cretaceous Sand
 tile.cretaceous_red_sand.name=Cretaceous Red Sand
 
@@ -24,3 +26,11 @@ tile.jurassic_red_sand.name=Jurassic Red Sand
 
 tile.triassic_sand.name=Triassic Sand
 tile.triassic_red_sand.name=Triassic Red Sand
+
+tile.cretaceous_soil.name=Cretaceous Soil
+tile.jurassic_soil.name=Jurassic Soil
+tile.triassic_soil.name=Triassic Soil
+
+tile.cretaceous_grass.name=Cretaceous Grass
+tile.jurassic_grass.name=Jurassic Grass
+tile.triassic_grass.name=Triassic Grass

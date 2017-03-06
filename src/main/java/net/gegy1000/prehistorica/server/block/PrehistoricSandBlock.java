@@ -18,11 +18,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-public class PrehistoricSand extends BlockFalling implements SubtypeBlock {
+public class PrehistoricSandBlock extends BlockFalling implements SubtypeBlock {
     public static final PropertyEnum<TimePeriod> PERIOD = PropertyEnum.create("period", TimePeriod.class);
     public static final PropertyEnum<BlockSand.EnumType> VARIANT = PropertyEnum.create("variant", BlockSand.EnumType.class);
 
-    public PrehistoricSand() {
+    public PrehistoricSandBlock() {
         this.setUnlocalizedName("prehistoric_sand");
         this.setCreativeTab(TabRegistry.BLOCKS);
         this.setDefaultState(this.blockState.getBaseState().withProperty(PERIOD, TimePeriod.CRETACEOUS).withProperty(VARIANT, BlockSand.EnumType.SAND));

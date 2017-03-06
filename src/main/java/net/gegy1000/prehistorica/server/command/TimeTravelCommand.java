@@ -14,15 +14,15 @@ import net.minecraft.world.WorldServer;
 
 import java.util.Locale;
 
-public class PeriodTeleportCommand extends CommandBase {
+public class TimeTravelCommand extends CommandBase {
     @Override
     public String getName() {
-        return "tptime";
+        return "timetravel";
     }
 
     @Override
     public String getUsage(ICommandSender sender) {
-        return "commands.tptime.usage";
+        return "commands.timetravel.usage";
     }
 
     @Override
@@ -49,7 +49,7 @@ public class PeriodTeleportCommand extends CommandBase {
 
                         @Override
                         public boolean placeInExistingPortal(Entity entity, float rotationYaw) {
-                            return true;
+                            return false;
                         }
 
                         @Override

@@ -1,0 +1,10 @@
+{
+  "parent": "block/grass",
+  "textures": {
+    "particle": "prehistorica:blocks/cretaceous_soil",
+    "bottom": "prehistorica:blocks/cretaceous_soil",
+    "top": "prehistorica:blocks/cretaceous_grass_top",
+    "side": "prehistorica:blocks/cretaceous_grass_side",
+    "overlay": "prehistorica:blocks/cretaceous_grass_overlay"
+  }
+}

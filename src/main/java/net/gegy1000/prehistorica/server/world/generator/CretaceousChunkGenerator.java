@@ -95,9 +95,9 @@ public class CretaceousChunkGenerator implements IChunkGenerator {
         this.forestNoise = ctx.getForest();
     }
 
-    public void setBlocksInChunk(int x, int z, ChunkPrimer primer) {
-        this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, x * 4 - 2, z * 4 - 2, 10, 10);
-        this.generateHeightmap(x * 4, 0, z * 4);
+    public void setBlocksInChunk(int chunkX, int chunkZ, ChunkPrimer primer) {
+        this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, chunkX * 4 - 2, chunkZ * 4 - 2, 10, 10);
+        this.generateHeightmap(chunkX * 4, 0, chunkZ * 4);
 
         for (int i = 0; i < 4; ++i) {
             int j = i * 5;

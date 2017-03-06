@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "period=cretaceous": {
+      "model": "prehistorica:cretaceous_grass"
+    },
+    "period=jurassic": {
+      "model": "prehistorica:jurassic_grass"
+    },
+    "period=triassic": {
+      "model": "prehistorica:triassic_grass"
+    }
+  }
+}
