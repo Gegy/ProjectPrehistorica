@@ -1,6 +1,7 @@
 package net.gegy1000.prehistorica.server.world.biome;
 
 import net.gegy1000.prehistorica.server.api.TimePeriod;
+import net.gegy1000.prehistorica.server.api.plant.PlantRegistry;
 import net.minecraft.world.biome.Biome;
 
 import java.lang.reflect.Field;
@@ -16,6 +17,7 @@ public class BiomeRegistry {
             .withTemperature(0.8F)
             .withHumidity(0.8F)
             .withHeightVariation(0.05F)
+            .withPlants(PlantRegistry.EQUISETITES, PlantRegistry.OSMUNDA, PlantRegistry.TEMPSKYA, PlantRegistry.TREE_FERN)
             .build();
 
     public static final PrehistoricaBiome CRETACEOUS_FOREST = PrehistoricaBiome.Builder.start(169, "cretaceous_forest")

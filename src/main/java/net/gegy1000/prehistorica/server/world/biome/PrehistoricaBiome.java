@@ -1,17 +1,24 @@
 package net.gegy1000.prehistorica.server.world.biome;
 
 import net.gegy1000.prehistorica.server.api.TimePeriod;
+import net.gegy1000.prehistorica.server.api.plant.Plant;
 import net.gegy1000.prehistorica.server.block.BlockRegistry;
 import net.gegy1000.prehistorica.server.block.PrehistoricGrassBlock;
 import net.gegy1000.prehistorica.server.block.PrehistoricSoilBlock;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.world.biome.Biome;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class PrehistoricaBiome extends Biome {
     private int id;
     private TimePeriod timePeriod;
     private PrehistoricaBiomeType type;
     private int generationChance;
+
+    private List<Plant> plants = new ArrayList<>();
 
     public PrehistoricaBiome(int id, BiomeProperties properties) {
         super(properties);
@@ -38,6 +45,10 @@ public class PrehistoricaBiome extends Biome {
         return this.generationChance;
     }
 
+    public List<Plant> getPlants() {
+        return this.plants;
+    }
+
     public static class Builder {
         private final int id;
         private BiomeProperties biomeProperties;
@@ -46,6 +57,7 @@ public class PrehistoricaBiome extends Biome {
         private IBlockState grassBlock;
         private IBlockState soilBlock;
         private int generationChance = 10;
+        private List<Plant> plants = new ArrayList<>();
 
         private Builder(int id, String name) {
             this.id = id;
@@ -101,6 +113,11 @@ public class PrehistoricaBiome extends Biome {
             return this;
         }
 
+        public Builder withPlants(Plant... plants) {
+            Collections.addAll(this.plants, plants);
+            return this;
+        }
+
         public IBlockState getGrassBlock() {
             if (this.grassBlock == null) {
                 return BlockRegistry.PREHISTORIC_GRASS.getDefaultState().withProperty(PrehistoricGrassBlock.PERIOD, this.timePeriod);
@@ -122,6 +139,7 @@ public class PrehistoricaBiome extends Biome {
             biome.timePeriod = this.timePeriod;
             biome.type = this.type;
             biome.generationChance = this.generationChance;
+            biome.plants = this.plants;
             return biome;
         }
     }

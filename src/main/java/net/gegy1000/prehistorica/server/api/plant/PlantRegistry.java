@@ -9,7 +9,6 @@ import net.gegy1000.prehistorica.server.api.plant.cretaceous.TempskyaPlant;
 import net.gegy1000.prehistorica.server.api.plant.cretaceous.TreeFernPlant;
 import net.gegy1000.prehistorica.server.block.BlockRegistry;
 import net.gegy1000.prehistorica.server.block.plant.PlantBlock;
-import net.minecraft.block.Block;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 
@@ -19,10 +18,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class PlantHandler {
+public class PlantRegistry {
     private static final Map<Plant, PlantSpawner> SPAWNERS = new HashMap<>();
     private static final Map<TimePeriod, Map<Biome, List<Plant>>> PERIOD_PLANTS = new HashMap<>();
-    private static final Map<Plant, Block> BLOCKS = new HashMap<>();
+    private static final Map<Plant, PlantBlock> BLOCKS = new HashMap<>();
 
     public static final Plant EQUISETITES = new EquisetitesPlant();
     public static final Plant ORONTIUM_MACKII = new OrontiumMackiiPlant();
@@ -33,10 +32,10 @@ public class PlantHandler {
 
     public static void register() {
         try {
-            for (Field field : PlantHandler.class.getDeclaredFields()) {
+            for (Field field : PlantRegistry.class.getDeclaredFields()) {
                 Object obj = field.get(null);
                 if (obj instanceof Plant) {
-                    PlantHandler.registerPlant((Plant) obj);
+                    PlantRegistry.registerPlant((Plant) obj);
                 }
             }
         } catch (IllegalAccessException e) {
@@ -73,7 +72,7 @@ public class PlantHandler {
         return SPAWNERS.get(plant);
     }
 
-    public static Block getBlock(Plant plant) {
+    public static PlantBlock getBlock(Plant plant) {
         return BLOCKS.get(plant);
     }
 }
