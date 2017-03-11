@@ -9,12 +9,15 @@ time_period.triassic.name=Triassic
 
 # Plants - Cretaceous
 
-tile.equisetites.name=Equisetites
 tile.orontium_mackii.name=Orontium Mackii
-tile.osmunda.name=Osmunda
 tile.tempskya.name=Tempskya
 tile.tree_fern.name=Tree Fern
 tile.paleoclusia.name=Paleoclusia
+
+# Plants - Triassic
+
+tile.equisetites.name=Equisetites
+tile.osmunda.name=Osmunda
 
 # Blocks - General Scenery
 

@@ -1,12 +1,8 @@
 package net.gegy1000.prehistorica.server.api.plant;
 
 import net.gegy1000.prehistorica.server.api.TimePeriod;
-import net.gegy1000.prehistorica.server.api.plant.cretaceous.EquisetitesPlant;
-import net.gegy1000.prehistorica.server.api.plant.cretaceous.OrontiumMackiiPlant;
-import net.gegy1000.prehistorica.server.api.plant.cretaceous.OsmundaPlant;
-import net.gegy1000.prehistorica.server.api.plant.cretaceous.PaleoclusiaPlant;
-import net.gegy1000.prehistorica.server.api.plant.cretaceous.TempskyaPlant;
-import net.gegy1000.prehistorica.server.api.plant.cretaceous.TreeFernPlant;
+import net.gegy1000.prehistorica.server.api.plant.triassic.EquisetitesPlant;
+import net.gegy1000.prehistorica.server.api.plant.triassic.OsmundaPlant;
 import net.gegy1000.prehistorica.server.block.BlockRegistry;
 import net.gegy1000.prehistorica.server.block.plant.PlantBlock;
 import net.minecraft.world.biome.Biome;
@@ -23,12 +19,13 @@ public class PlantRegistry {
     private static final Map<TimePeriod, Map<Biome, List<Plant>>> PERIOD_PLANTS = new HashMap<>();
     private static final Map<Plant, PlantBlock> BLOCKS = new HashMap<>();
 
-    public static final Plant EQUISETITES = new EquisetitesPlant();
-    public static final Plant ORONTIUM_MACKII = new OrontiumMackiiPlant();
     public static final Plant OSMUNDA = new OsmundaPlant();
+    public static final Plant EQUISETITES = new EquisetitesPlant();
+
+    /*public static final Plant ORONTIUM_MACKII = new OrontiumMackiiPlant();
     public static final Plant TEMPSKYA = new TempskyaPlant();
     public static final Plant TREE_FERN = new TreeFernPlant();
-    public static final Plant PALEOCLUSIA = new PaleoclusiaPlant();
+    public static final Plant PALEOCLUSIA = new PaleoclusiaPlant();*/
 
     public static void register() {
         try {

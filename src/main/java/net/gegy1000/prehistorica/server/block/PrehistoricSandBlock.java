@@ -78,4 +78,8 @@ public class PrehistoricSandBlock extends BlockFalling implements SubtypeBlock {
     public String getSubtypeName(IBlockState state) {
         return state.getValue(PERIOD).getName() + "_" + state.getValue(VARIANT).getName();
     }
+
+    public static IBlockState from(TimePeriod period) {
+        return BlockRegistry.PREHISTORIC_SAND.getDefaultState().withProperty(PERIOD, period);
+    }
 }

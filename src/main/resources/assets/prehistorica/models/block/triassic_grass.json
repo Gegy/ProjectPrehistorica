@@ -1,0 +1,11 @@
+{
+  "parent": "prehistorica:block/prehistoric_grass",
+  "textures": {
+    "particle": "prehistorica:blocks/triassic_soil",
+    "bottom": "prehistorica:blocks/triassic_soil",
+    "top": "prehistorica:blocks/triassic_grass_top",
+    "side": "prehistorica:blocks/triassic_grass_side",
+    "overlay": "prehistorica:blocks/triassic_grass_overlay",
+    "overlay_top": "prehistorica:blocks/triassic_grass_top_overlay"
+  }
+}

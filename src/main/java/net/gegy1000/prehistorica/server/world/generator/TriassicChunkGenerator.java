@@ -30,7 +30,7 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import java.util.List;
 import java.util.Random;
 
-public class CretaceousChunkGenerator implements IChunkGenerator {
+public class TriassicChunkGenerator implements IChunkGenerator {
     protected static final IBlockState STONE = Blocks.STONE.getDefaultState();
     private final Random rand;
     private NoiseGeneratorOctaves minLimitPerlinNoise;
@@ -55,7 +55,7 @@ public class CretaceousChunkGenerator implements IChunkGenerator {
     private double[] maxLimitRegion;
     private double[] depthRegion;
 
-    public CretaceousChunkGenerator(World world, long seed, String generatorSettings) {
+    public TriassicChunkGenerator(World world, long seed, String generatorSettings) {
         this.caveGenerator = TerrainGen.getModdedMapGen(this.caveGenerator, InitMapGenEvent.EventType.CAVE);
         this.ravineGenerator = TerrainGen.getModdedMapGen(this.ravineGenerator, InitMapGenEvent.EventType.RAVINE);
         this.world = world;

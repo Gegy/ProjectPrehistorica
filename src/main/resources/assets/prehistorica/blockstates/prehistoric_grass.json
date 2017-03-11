@@ -6,8 +6,11 @@
     "period=jurassic": {
       "model": "prehistorica:jurassic_grass"
     },
-    "period=triassic": {
-      "model": "prehistorica:triassic_grass"
-    }
+    "period=triassic": [
+      {"model": "prehistorica:triassic_grass"},
+      {"model": "prehistorica:triassic_grass", "y": 90},
+      {"model": "prehistorica:triassic_grass", "y": 180},
+      {"model": "prehistorica:triassic_grass", "y": 270}
+    ]
   }
 }

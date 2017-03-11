@@ -1,7 +1,7 @@
 package net.gegy1000.prehistorica.server.world.dimension;
 
 import net.gegy1000.prehistorica.server.api.PrehistoricDimension;
-import net.gegy1000.prehistorica.server.world.dimension.period.CretaceousDimension;
+import net.gegy1000.prehistorica.server.world.dimension.period.TriassicDimension;
 import net.minecraft.world.DimensionType;
 import net.minecraftforge.common.DimensionManager;
 
@@ -12,7 +12,7 @@ import java.util.Map;
 public class DimensionRegistry {
     private static final Map<Integer, PrehistoricDimension> DIMENSIONS = new HashMap<>();
 
-    public static final DimensionType CRETACEOUS = DimensionRegistry.create(new CretaceousDimension());
+    public static final DimensionType TRIASSIC = DimensionRegistry.create(new TriassicDimension());
 
     public static void register() {
         try {

@@ -123,4 +123,8 @@ public class PrehistoricGrassBlock extends Block implements SubtypeBlock, Colore
         }
         return 0xFFFFFF;
     }
+
+    public static IBlockState from(TimePeriod period) {
+        return BlockRegistry.PREHISTORIC_GRASS.getDefaultState().withProperty(PERIOD, period);
+    }
 }

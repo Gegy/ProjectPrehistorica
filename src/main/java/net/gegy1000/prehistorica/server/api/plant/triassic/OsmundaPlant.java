@@ -1,4 +1,4 @@
-package net.gegy1000.prehistorica.server.api.plant.cretaceous;
+package net.gegy1000.prehistorica.server.api.plant.triassic;
 
 import net.gegy1000.prehistorica.server.api.TimePeriod;
 import net.gegy1000.prehistorica.server.api.plant.Plant;

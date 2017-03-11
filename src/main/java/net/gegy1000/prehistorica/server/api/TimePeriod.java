@@ -5,9 +5,9 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.DimensionType;
 
 public enum TimePeriod implements IStringSerializable {
-    CRETACEOUS(0, "cretaceous", DimensionRegistry.CRETACEOUS),
-    JURASSIC(1, "jurassic", DimensionRegistry.CRETACEOUS),
-    TRIASSIC(2, "triassic", DimensionRegistry.CRETACEOUS);
+    CRETACEOUS(0, "cretaceous", DimensionRegistry.TRIASSIC),
+    JURASSIC(1, "jurassic", DimensionRegistry.TRIASSIC),
+    TRIASSIC(2, "triassic", DimensionRegistry.TRIASSIC);
 
     private static final TimePeriod[] META_LOOKUP = new TimePeriod[TimePeriod.values().length];
 

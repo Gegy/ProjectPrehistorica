@@ -63,4 +63,8 @@ public class PrehistoricSoilBlock extends Block implements SubtypeBlock {
     public String getSubtypeName(IBlockState state) {
         return state.getValue(PERIOD).getName() + "_soil";
     }
+
+    public static IBlockState from(TimePeriod period) {
+        return BlockRegistry.PREHISTORIC_SOIL.getDefaultState().withProperty(PERIOD, period);
+    }
 }

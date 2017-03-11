@@ -2,7 +2,6 @@ package net.gegy1000.prehistorica.server.world.biome.generator;
 
 import net.gegy1000.prehistorica.server.api.TimePeriod;
 import net.gegy1000.prehistorica.server.world.biome.PrehistoricaBiomeType;
-import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
@@ -24,7 +23,7 @@ public class BiomeSeedLayer extends PrehistoricaGenLayer {
                 if (parent[index] == 1) {
                     this.set(this.selectBiome(PrehistoricaBiomeType.LANDMASS), biomes, deltaX, deltaY, areaWidth);
                 } else {
-                    biomes[index] = Biome.getIdForBiome(Biomes.OCEAN);
+                    biomes[index] = Biome.getIdForBiome(this.selectBiome(PrehistoricaBiomeType.OCEAN));
                 }
             }
         }

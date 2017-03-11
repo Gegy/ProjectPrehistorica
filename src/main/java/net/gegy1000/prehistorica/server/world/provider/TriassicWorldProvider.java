@@ -4,7 +4,7 @@ import net.gegy1000.prehistorica.server.api.TimePeriod;
 import net.gegy1000.prehistorica.server.util.PrehistoricaUtils;
 import net.gegy1000.prehistorica.server.world.biome.generator.PrehistoricaBiomeProvider;
 import net.gegy1000.prehistorica.server.world.dimension.DimensionRegistry;
-import net.gegy1000.prehistorica.server.world.generator.CretaceousChunkGenerator;
+import net.gegy1000.prehistorica.server.world.generator.TriassicChunkGenerator;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -12,20 +12,20 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.chunk.IChunkGenerator;
 
-public class CretaceousWorldProvider extends WorldProvider {
+public class TriassicWorldProvider extends WorldProvider {
     @Override
     public DimensionType getDimensionType() {
-        return DimensionRegistry.CRETACEOUS;
+        return DimensionRegistry.TRIASSIC;
     }
 
     @Override
     public void createBiomeProvider() {
-        this.biomeProvider = new PrehistoricaBiomeProvider(TimePeriod.CRETACEOUS, this.world.getSeed());
+        this.biomeProvider = new PrehistoricaBiomeProvider(TimePeriod.TRIASSIC, this.world.getSeed());
     }
 
     @Override
     public IChunkGenerator createChunkGenerator() {
-        return new CretaceousChunkGenerator(this.world, this.world.getSeed(), this.world.getWorldInfo().getGeneratorOptions());
+        return new TriassicChunkGenerator(this.world, this.world.getSeed(), this.world.getWorldInfo().getGeneratorOptions());
     }
 
     @Override
