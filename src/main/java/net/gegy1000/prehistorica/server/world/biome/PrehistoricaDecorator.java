@@ -38,14 +38,18 @@ public class PrehistoricaDecorator implements IWorldGenerator {
                     PrehistoricaBiome prehistoricaBiome = (PrehistoricaBiome) biome;
                     List<Plant> plants = prehistoricaBiome.getPlants();
                     if (plants.size() > 0) {
-                        Plant plant = plants.get(random.nextInt(plants.size()));
-                        PlantBlock block = PlantRegistry.getBlock(plant);
-                        PlantSpawner spawner = PlantRegistry.getSpawner(plant);
-                        IBlockState ground = world.getBlockState(plantPosition.down());
-                        IBlockState state = world.getBlockState(plantPosition);
-                        IBlockState above = world.getBlockState(plantPosition.up());
-                        if (spawner.canSpawn(ground, state, above, block)) {
-                            spawner.spawn(world, plantPosition, block);
+                        for (Plant plant : plants) {
+                            if (random.nextDouble() * 100.0 <= plant.getSpawnChance()) {
+                                PlantSpawner spawner = PlantRegistry.getSpawner(plant);
+                                IBlockState ground = world.getBlockState(plantPosition.down());
+                                IBlockState state = world.getBlockState(plantPosition);
+                                IBlockState above = world.getBlockState(plantPosition.up());
+                                PlantBlock block = PlantRegistry.getBlock(plant);
+                                if (spawner.canSpawn(ground, state, above, block)) {
+                                    spawner.spawn(world, plantPosition, block);
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
